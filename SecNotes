@@ -1,0 +1,61 @@
+Stack:15
+IP:10.50.39.138
+
+Penetration Testing Phases:
+1. Mission Definition
+  Define goals, targets
+  Determine mission scope
+  Define RoE
+2. Recon
+  Gather info (Active or Passive)
+3. Footprinting
+4. Exploitation
+5. Post-Exploitation
+6. Documentation
+
+Reporting:
+Opnotes - Technical details
+Formalized Report - Technical or Executive
+
+Why a report?
+Continuity
+Accounting of Actions
+Ability to repeat Actions
+Troubleshoot issues
+
+What to Include:
+Tools
+Timestamps
+Success/Failure
+Analytic Conclusions
+Unexpected Results
+
+Exploit Research:
+Initial Access - first foothold on the network
+  Phishing is the most common method used to gain initial access
+  Other methods include watering hole attacks and credential reuse
+Exploitation Research - Transition to recon to weaponization
+Research - OSINT 
+Capablties - Mission Objectives drive requirements
+  Collection and Effects
+  Additional Functionality
+  COMSEC
+Testing - Verify Success
+  Faster time to break out of initial foothold
+  Reduced risk of detection or tool failure
+  Inproved recovery times
+Plan - Procure software and hardware
+  Assign developer and tester
+  Document results
+Important Websites:
+  cve.mitre.org
+  exploit-db.com
+  
+Scanning and Recon:
+OSINT - specific intelligence requirement
+HTML - Markup language for browser interpretation of webpages
+
+*for i in {1..254}; do (ping -c 1 192.168.28.$i | grep "bytes from" &); done*
+*sudo proxychains nmap -Pn -T4 -sT -p1-10000 <ip> 2>/dev/null*
+*sudo proxychains nmap -Pn -T4 -sT -p80,8080 <ip> --script http-enum.nse|smb-os-discovery.nse 2>/dev/null*
+*proxychains nc <ip> <p#>*
