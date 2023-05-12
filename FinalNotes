@@ -24,7 +24,7 @@ Copy raw payload to URL; found credentials
 Decode passwords using ROT13
 
 http://10.50.38.255/apply.html appears to be an upload spot; nothing gained or found
-http://10.50.38.255/getcareers.php?myfile=Systems_engineer.html; possible directory traversal  (Use as last resort)
+http://10.50.38.255/getcareers.php?myfile=Systems_engineer.html; possible directory traversal  (File to read)
 
 nmap -Pn -T4 -sT <WebSrvIP> --script http-enum.nse or nikto -h <WebSrvIP>; found /scripts/
 
@@ -36,7 +36,7 @@ bash
 sudo -l
 find / -type f -perm /<SUID,SGID, or both>; found nothing
 ip a; nothing useful found
-ip route
+ip route; nothing seemingly useful
 cat /etc/hosts
 for i in {1..254}; do (ping -c1 192.168.28.$i | grep "bytes from" &); done
 
